@@ -73,3 +73,5 @@ group :development, :test do
   gem "foreman"
   gem "factory_bot_rails"
 end
+
+gem "dotenv-rails", "~> 3.1"
