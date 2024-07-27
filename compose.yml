@@ -16,6 +16,8 @@ services:
     environment:
       EDITOR: vi
     user: "${DOCKER_EXEC_USER:-root}"
+    labels:
+      - dev.orbstack.domains=dt.local
   db:
     image: postgres
     volumes:
