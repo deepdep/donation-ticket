@@ -73,7 +73,8 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   if ENV['SERVICE_HOST'].present?
-    host = ENV['SERVICE_HOST'].strip.gsub(/\Ahttps?:\/\//, '')
+    host = ENV['SERVICE_HOST'].gsub(/\Ahttps?:\/\//, '')
     config.hosts << host
+    config.action_mailer.default_url_options = { host: ENV['SERVICE_HOST'] }
   end
 end
