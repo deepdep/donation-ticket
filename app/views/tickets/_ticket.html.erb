@@ -15,8 +15,9 @@
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Token:</strong>
-    <%= ticket.token %>
+    <string class="block font-medium mb-1">QR Code:</string>
+    <%= qrcode_svg(use_ticket_url(ticket)) %>
+    <br>
+    <%= use_ticket_url(ticket) %>
   </p>
-
 </div>

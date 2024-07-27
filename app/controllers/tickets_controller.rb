@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[ new create edit update destroy ]
   before_action :set_ticket, only: %i[ show edit update use destroy ]
 
   # GET /tickets or /tickets.json
@@ -52,7 +52,7 @@ class TicketsController < ApplicationController
     respond_to do |format|
       format.html {
         @ticket.use!
-        redirect_to root_path
+        redirect_to @ticket, notice: 'Ticket used'
       }
     end
   end
