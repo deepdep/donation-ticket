@@ -1,0 +1,23 @@
+<div id="<%= dom_id ticket %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= ticket.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Amount:</strong>
+    <%= ticket.amount %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Used:</strong>
+    <%= ticket.used %>
+  </p>
+
+  <p class="my-5">
+    <string class="block font-medium mb-1">QR Code:</string>
+    <%= qrcode_svg(use_ticket_url(ticket)) %>
+    <br>
+    <%= use_ticket_url(ticket) %>
+  </p>
+</div>

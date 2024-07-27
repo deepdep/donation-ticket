@@ -3,8 +3,8 @@ services:
     build:
       context: .
       dockerfile: ./dev/Dockerfile
-    command: bundle exec foreman start -f ${PROCFILE:-./Procfile.dev}
-    # command: tail -f /dev/null
+    # command: bundle exec foreman start -f ${PROCFILE:-./Procfile.dev}
+    command: tail -f /dev/null
     volumes:
       - .:/rails
       - bundle_data:/usr/local/bundle
